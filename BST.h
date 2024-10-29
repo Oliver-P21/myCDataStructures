@@ -94,7 +94,7 @@ void updateHeight(Node* node) {
 }
 
 Node* findRoot(Node* node) {
-    Node* temp = node;
+    Node* temp = node;  // needed for heights
     while (temp->parent != NULL) {
         temp = temp->parent;
     }
@@ -124,7 +124,7 @@ Node* findParent(Node* node, int target) {
         }
         return NULL;
     }
-
+    // may be able to refactor
     if (node->right != NULL) {
         if (node->right->data == target) {
             return node;
