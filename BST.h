@@ -18,6 +18,7 @@ void preOrder(Node*);
 void erase(Node*, int);
 Node* insert(Node*, int);
 Node* findParent(Node*, int);
+Node* findRoot(Node*);
 Node* search(Node*, int);
 Node* createTree(const size_t, const int);
 void updateHeight(Node*);
