@@ -125,7 +125,7 @@ Node* search(Node* node, int target) {
     return search(node->right, target);
 }
 
-Node* createTree(Node* node, const int SIZE, const int MAX) {
+Node* createTree(Node* node, const size_t SIZE, const int MAX) {
     Node* temp = NULL;
     for (size_t i = 0; i < SIZE; i++) {
         temp = insert(temp, rand() % (MAX + 1));
