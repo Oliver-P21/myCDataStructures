@@ -60,6 +60,34 @@ Node* insert(Node* node, int data) {
     // tree does not have duplicate values
     return node;
 }
+Node* insertNode(Node* root, Node* newNode) {
+    if (root == NULL) {
+        return newNode;
+    }
+
+    if (newNode->data < root->data) {
+        root->left = insert(root->left, newNode);
+        root->left->parent = root;
+        root->left->height = root->height - 1;
+        if (root->left->height == -1) {  // this condition should only be true once at most per insert
+            Node* treeRoot = findRoot(root);
+            updateHeight(treeRoot);
+        }
+    }
+
+    if (newNode->data > root->data) {
+        root->right = insert(root->right, newNode);
+        root->right->parent = root;
+        root->right->height = root->height - 1;
+        if (root->right->height == -1) {
+            Node* treeRoot = findRoot(root);
+            updateHeight(treeRoot);
+        }
+    }
+
+    // tree does not have duplicate values
+    return root;
+}
 void updateHeight(Node* node) {
     if (node == NULL) {
         return;

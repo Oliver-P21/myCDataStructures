@@ -9,7 +9,7 @@ int main() {
     srand(time(0));
 
     Node* tree = null;
-    tree = createTree(20, 100);
-    inOrder(tree);
+    tree = insert(tree, 5);
+
     return 0;
 }
