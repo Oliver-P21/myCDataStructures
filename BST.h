@@ -19,7 +19,7 @@ void erase(Node*, int);
 Node* insert(Node*, int);
 Node* findParent(Node*, int);
 Node* search(Node*, int);
-Node* createTree(Node*, const size_t, const int);
+Node* createTree(const size_t, const int);
 void updateHeight(Node*);
 
 #endif
