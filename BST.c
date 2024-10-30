@@ -72,7 +72,7 @@ void updateHeight(Node* node) {
 }
 
 Node* findRoot(Node* node) {
-    Node* temp = node;  // needed for heights
+    Node* temp = node;  // needed to find the heights
     while (temp->parent != NULL) {
         temp = temp->parent;
     }
@@ -86,30 +86,6 @@ void erase(Node* node, int data) {
     }
 
     Node* parent = target->parent;
-}
-
-Node* findParent(Node* node, int target) {
-    if (node == NULL) {
-        return NULL;
-    }
-
-    if (target < node->data) {
-        if (node->left != NULL) {
-            if (node->left->data == target) {
-                return node;
-            }
-            return findParent(node->left, target);
-        }
-        return NULL;
-    }
-    // may be able to refactor
-    if (node->right != NULL) {
-        if (node->right->data == target) {
-            return node;
-        }
-        return findParent(node->right, target);
-    }
-    return NULL;
 }
 
 Node* search(Node* node, int target) {
