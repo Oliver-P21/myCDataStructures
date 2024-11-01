@@ -114,6 +114,10 @@ void erase(Node* node, int data) {
         return;
     }
 
+    if (findRoot(target)->data == data) {
+        return;
+    }
+
     Node* parent = target->parent;                        // never null
     if (target->left == NULL && target->right == NULL) {  // leaf node
         if (parent->left == target) {
