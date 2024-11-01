@@ -1,6 +1,6 @@
 #include <time.h>
 
-#include "BST.h"
+#include "Tree.h"
 #include "assert.h"
 #include "assertions.h"
 #define null NULL

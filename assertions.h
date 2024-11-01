@@ -7,7 +7,15 @@ void assertFalse(bool);
 void assertNull(void*);
 
 void assertNull(void* ptr) {
-    if (ptr == 0) {
+    if (ptr == NULL) {
+        printf("Success!\n");
+    } else {
+        printf("Failure...\n");
+    }
+}
+
+void assertNotNull(void* ptr) {
+    if (ptr != NULL) {
         printf("Success!\n");
     } else {
         printf("Failure...\n");
