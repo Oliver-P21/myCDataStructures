@@ -4,12 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct sNode {
+typedef struct Node {
     int data;
     int height;
-    struct sNode* parent;
-    struct sNode* left;
-    struct sNode* right;
+    struct Node* parent;
+    struct Node* left;
+    struct Node* right;
 } Node;
 
 void inOrder(Node*);
@@ -22,5 +22,6 @@ Node* findRoot(Node*);
 Node* search(Node*, int);
 Node* createTree(const size_t, const int);
 void updateHeight(Node*);
+Node* findSuccessor(Node*);
 
 #endif

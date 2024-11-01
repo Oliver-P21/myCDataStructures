@@ -66,7 +66,7 @@ Node* insertNode(Node* root, Node* newNode) {
     }
 
     if (newNode->data < root->data) {
-        root->left = insert(root->left, newNode);
+        root->left = insertNode(root->left, newNode);
         root->left->parent = root;
         root->left->height = root->height - 1;
         if (root->left->height == -1) {  // this condition should only be true once at most per insert
@@ -76,7 +76,7 @@ Node* insertNode(Node* root, Node* newNode) {
     }
 
     if (newNode->data > root->data) {
-        root->right = insert(root->right, newNode);
+        root->right = insertNode(root->right, newNode);
         root->right->parent = root;
         root->right->height = root->height - 1;
         if (root->right->height == -1) {
@@ -100,22 +100,51 @@ void updateHeight(Node* node) {
 }
 
 Node* findRoot(Node* node) {
-    Node* temp = node;  // needed to find the heights
+    Node* temp = node;  // needed to update the heights
     while (temp->parent != NULL) {
         temp = temp->parent;
     }
     return temp;
 }
 
+// Ignores case where removing the root, refactor later, handle case in typdef Tree
 void erase(Node* node, int data) {
     Node* target = search(node, data);
     if (target == NULL) {
         return;
     }
 
-    Node* parent = target->parent;
+    Node* parent = target->parent;                        // never null
+    if (target->left == NULL && target->right == NULL) {  // leaf node
+        if (parent->left == target) {
+            parent->left = NULL;
+        } else {
+            parent->right = NULL;
+        }
 
-    // Testing git alias
+    } else if (target->right == NULL) {
+        if (parent->left == target) {
+            parent->left = target->left;
+        } else {
+            parent->right = target->left;
+        }
+        target->left->parent = parent;
+
+    } else if (target->left == NULL) {
+        if (parent->left == target) {
+            parent->left = target->right;
+        } else {
+            parent->right = target->right;
+        }
+        target->right->parent = parent;
+    } else {
+    }
+}
+
+Node* findSuccessor(Node* root) {
+    if (root == NULL) {
+        return NULL;
+    }
 }
 
 Node* search(Node* node, int target) {
