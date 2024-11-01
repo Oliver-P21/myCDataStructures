@@ -8,9 +8,16 @@
 int main() {
     srand(time(0));
 
-    Node* tree = null;
-    tree = createTree(1000, 10000);
-    inOrder(tree);
+    Tree* tree;
+    tree->root == null;
+    printf("Inserting now\n");
+    insertVal(tree, 5);
+    printf("Done with insert\n");
+    node_inOrder(tree->root);
+    printf("%p\n", tree->root);
+    printf("Value: %d\n", tree->root->data);
+    printf("Size: %d\n", tree->size);
+
     printf("\n");
     return 0;
 }

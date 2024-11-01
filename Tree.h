@@ -1,8 +1,8 @@
 #include "Node.h"
 
-typedef struct {
+typedef struct Tree {
     Node* root;
     size_t size;
 } Tree;
 
-Tree* insertVal(int);
+Tree* insertVal(Tree*, int);
