@@ -114,6 +114,8 @@ void erase(Node* node, int data) {
     }
 
     Node* parent = target->parent;
+
+    // Testing git alias
 }
 
 Node* search(Node* node, int target) {
