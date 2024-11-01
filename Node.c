@@ -29,13 +29,13 @@ void node_postOrder(Node* node) {
 
 Node* node_insertVal(Node* node, int data) {
     if (node == NULL) {
-        printf("In node_insertVal\n");
+        // printf("In node_insertVal\n");
         Node* ptr = (Node*)malloc(sizeof(Node));
         ptr->data = data;
         ptr->parent = NULL;
         ptr->left = NULL;
         ptr->right = NULL;
-        printf("Exiting node_insertVal\n");
+        // printf("Exiting node_insertVal\n");
         return ptr;
     }
 
