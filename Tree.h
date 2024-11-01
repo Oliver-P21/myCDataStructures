@@ -6,4 +6,4 @@ typedef struct Tree {
 } Tree;
 
 Tree* insertVal(Tree*, int);
-Tree* createTree();
+Tree* createTree(const size_t, const size_t);
